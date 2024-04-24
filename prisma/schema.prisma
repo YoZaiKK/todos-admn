@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  engineType = "library"
 }
 
 datasource db {
@@ -14,10 +15,9 @@ datasource db {
 }
 
 model Todo {
-  id        String   @id @default(uuid())
-  title     String
+  id          String @id @default(uuid())
   description String
-  completed Boolean @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  completed   Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
